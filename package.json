@@ -11,9 +11,9 @@
   ],
   "scripts": {
     "build:modules": "tsc -p tsconfig.json",
-    "build:browser": "esbuild src/main.ts --bundle --minify --sourcemap=external --outfile=dist/browser/al.js",
+    "build:browser": "esbuild src/main.ts --bundle --minify --sourcemap=external --format=esm --outfile=dist/browser/al.js",
     "build": "yarn build:modules && yarn build:browser",
-    "dev": "esbuild src/main.ts --bundle --outfile=dist/browser/al.js"
+    "dev": "esbuild src/main.ts --bundle --serve --sourcemap --servedir=demo --outfile=demo/al.js --format=esm"
   },
   "exports": {
     "./*": {
@@ -34,10 +34,15 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
+    "@yarnpkg/esbuild-plugin-pnp": "^2.0.1",
     "esbuild": "^0.14.29",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
     "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "javascript-state-machine": "^3.1.0",
+    "type-fest": "^2.12.2"
   }
 }

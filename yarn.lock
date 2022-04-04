@@ -198,6 +198,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@yarnpkg/esbuild-plugin-pnp@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@yarnpkg/esbuild-plugin-pnp@npm:2.0.1"
+  dependencies:
+    tslib: ^1.13.0
+  peerDependencies:
+    esbuild: ">=0.10.0"
+  checksum: ff081f65e01d5720dc17faf4dee3b055ea81235344b32322e095eec8d8472b36109cc27e6bfd8463933acde00c9bdcab008df662db020dec7bdef25a75dc5aaf
+  languageName: node
+  linkType: hard
+
 "acorn-jsx@npm:^5.3.1":
   version: 5.3.2
   resolution: "acorn-jsx@npm:5.3.2"
@@ -288,10 +299,13 @@ __metadata:
   dependencies:
     "@typescript-eslint/eslint-plugin": ^5.17.0
     "@typescript-eslint/parser": ^5.17.0
+    "@yarnpkg/esbuild-plugin-pnp": ^2.0.1
     esbuild: ^0.14.29
     eslint: ^8.12.0
     eslint-config-prettier: ^8.5.0
     eslint-plugin-import: ^2.25.4
+    javascript-state-machine: ^3.1.0
+    type-fest: ^2.12.2
     typescript: ^4.6.3
   languageName: unknown
   linkType: soft
@@ -1316,6 +1330,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"javascript-state-machine@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "javascript-state-machine@npm:3.1.0"
+  checksum: 4510b6bace3659f0eda48fffeb03e54792a1c1f1872e81582b981a79f8cc2029189ed735be0ef8926a66e86189162b1e7f82521dd1d633becc1f84a0a09c0a39
+  languageName: node
+  linkType: hard
+
 "js-yaml@npm:^4.1.0":
   version: 4.1.0
   resolution: "js-yaml@npm:4.1.0"
@@ -1805,7 +1826,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.8.1":
+"tslib@npm:^1.13.0, tslib@npm:^1.8.1":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
@@ -1836,6 +1857,13 @@ __metadata:
   version: 0.20.2
   resolution: "type-fest@npm:0.20.2"
   checksum: 4fb3272df21ad1c552486f8a2f8e115c09a521ad7a8db3d56d53718d0c907b62c6e9141ba5f584af3f6830d0872c521357e512381f24f7c44acae583ad517d73
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^2.12.2":
+  version: 2.12.2
+  resolution: "type-fest@npm:2.12.2"
+  checksum: ee69676da1f69d2b14bbec28c7b95220a3221ab14093f54bde179c59e185a80470859553eada535ec35d8637a245c2f0efe9d7c99cc46a43f3b4c7ef64db7957
   languageName: node
   linkType: hard
 

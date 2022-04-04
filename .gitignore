@@ -92,9 +92,9 @@ dist/
 docs/
 coverage
 
-# Yarn zero-install
+# Yarn
+.pnp.*
 .yarn/*
-!.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
