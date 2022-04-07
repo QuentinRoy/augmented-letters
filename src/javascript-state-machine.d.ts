@@ -49,7 +49,7 @@ declare module "javascript-state-machine" {
       >;
     };
 
-    type Options<
+    export type Options<
       TransitionName extends string,
       StateName extends string,
       Data,
@@ -64,17 +64,17 @@ declare module "javascript-state-machine" {
     // StateMachine.factory() options. It needs to be distinguished from
     // StateMachineOptions because the data property is different, and
     // we need to set up a DataArgs type in this case.
-    type FactoryOptions<
+    export type FactoryOptions<
       TransitionName extends string,
       StateName extends string,
       Data,
       DataArgs extends Array<unknown>,
       CustomMethods,
-    > = {
-      init?: StateName;
-      methods?: CustomMethods;
+    > = Omit<
+      Options<TransitionName, StateName, Data, CustomMethods>,
+      "data"
+    > & {
       data?: (...args: DataArgs) => Data;
-      transitions: Array<Transition<TransitionName, StateName>>;
     };
 
     export type Transition<TransitionName, StateName> = {

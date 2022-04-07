@@ -23,20 +23,21 @@
  *    }
  *  ]
  */
-export type ALDefinition = Array<ALGroup>;
-export type ALGroup = {
+export type Definition = Array<DefinitionGroup>;
+export type DefinitionGroup = {
   // The id of the group, also used to identify the corresponding gesture.
   id: string;
   gesture: string;
-  items: Array<ALItem>;
+  items: Array<DefinitionItem>;
 };
-export type ALItem = {
+export type DefinitionItem = {
   id: string;
   label: string;
   angle: number;
   // Allows for multi-level. However, it is usually not recommended to build a
   // hierarchy. The preferred way to use this is to use a special direction
   // labeled "other" to specify the rest of the items.
-  items?: Array<ALItem>;
+  items?: Array<DefinitionItem>;
 };
+
 export type Coordinate = [number, number];

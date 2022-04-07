@@ -11,9 +11,9 @@
   ],
   "scripts": {
     "build:modules": "tsc -p tsconfig.json",
-    "build:browser": "esbuild src/main.ts --bundle --minify --sourcemap=external --format=esm --outfile=dist/browser/al.js",
+    "build:browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=dist/browser/al.js",
     "build": "yarn build:modules && yarn build:browser",
-    "dev": "esbuild src/main.ts --bundle --serve --sourcemap --servedir=demo --outfile=demo/al.js --format=esm"
+    "dev": "esbuild src/browser.ts --serve --sourcemap --servedir=demo --outfile=demo/al.js"
   },
   "exports": {
     "./*": {
@@ -21,6 +21,8 @@
       "types": "./dist/modules/*"
     },
     ".": {
+      "import": "./dist/modules/main.js",
+      "types": "./dist/modules/main.d.ts",
       "default": "./dist/browser/al.js"
     }
   },
@@ -43,6 +45,8 @@
   },
   "dependencies": {
     "javascript-state-machine": "^3.1.0",
+    "mitt": "^3.0.0",
+    "rxjs": "^7.5.5",
     "type-fest": "^2.12.2"
   }
 }
