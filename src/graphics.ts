@@ -7,7 +7,17 @@ type GraphicsParams = {
   menu: Definition;
 };
 
-export default function graphics(params: GraphicsParams): Observer<Instruction>;
-export default function graphics(): Observer<Instruction> {
-  throw new Error("Not implemented");
+
+export default function graphics(params: GraphicsParams): Observer<Instruction> {
+  return {
+    next: (instruction) => {
+      console.log(instruction);
+    },
+    error: (error) => {
+      console.error(error);
+    },
+    complete: () => {
+      console.log("complete");
+    },
+  };
 }
