@@ -17,15 +17,20 @@
   },
   "exports": {
     "./*": {
-      "import": "./dist/modules/*",
-      "types": "./dist/modules/*"
+      "import": {
+        "types": "./dist/modules/*",
+        "default": "./dist/modules/*"
+      }
     },
     ".": {
-      "import": "./dist/modules/main.js",
-      "types": "./dist/modules/main.d.ts",
-      "default": "./dist/browser/al.js"
+      "import": {
+        "types": "./dist/modules/main.d.ts",
+        "default": "./dist/modules/main.js"
+      },
+      "require": "./dist/browser/al.js"
     }
   },
+  "main": "./dist/browser/al.js",
   "repository": "git@github.com:QuentinRoy/augmented-letters.git",
   "author": "Quentin Roy <hi@quentinroy.fr>",
   "contributors": [
